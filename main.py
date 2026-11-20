@@ -22,8 +22,6 @@ for index_point in range(1,number_points):
 
 
 
-'écrire fonction selon la méthode approché - éléments finis'
-
 x_apps = [start]
 y_apps = [5]
 y_app = 5
@@ -38,8 +36,10 @@ for index_point_app in range (1,number_points_app):
 	y_apps.append(y_app)
 
 plt.figure(figsize=(15, 6))
-
-plt.plot(x_values, y_values, 'b-')
-plt.plot(x_apps, y_apps, 'ro')
-
+plt.title("Solution equation différentielle f' - 3f = 0 avec f(0)= 5")
+plt.plot(x_values, y_values, color="blue", label="solution analytique")
+plt.plot(x_apps, y_apps, color="red", marker="o", linestyle='dashed',label="solution approchée")
+plt.xlabel("les valeurs de x")
+plt.ylabel("les valeurs de y")
+plt.legend()
 plt.show()
