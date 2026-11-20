@@ -21,7 +21,25 @@ for index_point in range(1,number_points):
 	y_values.append(y_value)
 
 
-plt.figure(figsize=(15, 6))
-plt.plot(x_values, y_values)
-plt.show()
 
+'écrire fonction selon la méthode approché - éléments finis'
+
+x_apps = [start]
+y_apps = [5]
+y_app = 5
+
+number_points_app= int((end - start)/step)
+
+for index_point_app in range (1,number_points_app):
+	x_app = start + index_point_app * step
+	y_app = y_app * (1 + 3 * step )
+
+	x_apps.append(x_app)
+	y_apps.append(y_app)
+
+plt.figure(figsize=(15, 6))
+
+plt.plot(x_values, y_values, 'b-')
+plt.plot(x_apps, y_apps, 'ro')
+
+plt.show()
